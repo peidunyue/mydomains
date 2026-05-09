@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>优质域名出租 / 转让 — Premium Domains for Lease & Sale</title>
+<meta name="description" content="51tokens / basictoken / 91tokens / 91claws / itoken / .games 系列优质短域名出租与转让，联系邮箱 1196755294@qq.com">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0b0d12;
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --bg-card-hover: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 215, 0, 0.4);
+    --text: #e8eaed;
+    --text-dim: #9aa0a6;
+    --gold: #f4c430;
+    --gold-soft: rgba(244, 196, 48, 0.15);
+    --green: #4ade80;
+    --green-soft: rgba(74, 222, 128, 0.15);
+    --blue: #60a5fa;
+    --blue-soft: rgba(96, 165, 250, 0.15);
+    --radius: 14px;
+  }
+  html, body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  body {
+    background-image:
+      radial-gradient(ellipse at top left, rgba(244, 196, 48, 0.08), transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(96, 165, 250, 0.06), transparent 50%);
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* Language switcher */
+  .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 100; display: flex; background: var(--bg-card); border: 1px solid var(--border); border-radius: 999px; padding: 4px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .lang-switch button { background: transparent; border: none; color: var(--text-dim); padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer; border-radius: 999px; transition: all 0.15s; font-family: inherit; }
+  .lang-switch button.active { background: var(--gold); color: #000; }
+  .lang-switch button:hover:not(.active) { color: var(--text); }
+
+  /* Hero */
+  .hero { text-align: center; padding: 32px 0 56px; }
+  .badge { display: inline-block; padding: 6px 14px; background: var(--gold-soft); color: var(--gold); border-radius: 999px; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px; background: linear-gradient(135deg, #fff 0%, #f4c430 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero p { color: var(--text-dim); font-size: 16px; max-width: 640px; margin: 0 auto; }
+
+  /* Current domain notice */
+  .current-notice { background: var(--gold-soft); border: 1px solid rgba(244, 196, 48, 0.3); border-radius: var(--radius); padding: 16px 20px; margin: 24px auto 40px; max-width: 720px; text-align: center; font-size: 14px; }
+  .current-notice strong { color: var(--gold); font-weight: 600; }
+  .current-notice .hint { display: block; color: var(--text-dim); margin-top: 4px; font-size: 13px; }
+
+  /* Stats */
+  .stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin: 32px 0 48px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 32px; font-weight: 700; color: var(--gold); }
+  .stat-label { font-size: 13px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Groups */
+  .group { margin-bottom: 40px; }
+  .group-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .group-title { font-size: 20px; font-weight: 600; color: var(--text); }
+  .group-desc { font-size: 13px; color: var(--text-dim); }
+
+  /* Domain grid */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .domain-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px; transition: all 0.2s ease; position: relative; overflow: hidden; }
+  .domain-card:hover { background: var(--bg-card-hover); border-color: var(--border-hover); transform: translateY(-2px); }
+  .domain-card.current { border-color: var(--gold); background: var(--gold-soft); }
+  .domain-card.current::before { content: attr(data-current-label); position: absolute; top: 8px; right: 8px; background: var(--gold); color: #000; font-size: 10px; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+  .domain-name { font-size: 17px; font-weight: 600; font-family: "SF Mono", Menlo, Consolas, monospace; word-break: break-all; }
+  .domain-name .tld { color: var(--gold); }
+  .domain-meta { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; letter-spacing: 0.3px; }
+  .tag.lease { background: var(--green-soft); color: var(--green); }
+  .tag.sale { background: var(--blue-soft); color: var(--blue); }
+
+  /* Contact */
+  .contact { margin-top: 56px; background: linear-gradient(135deg, rgba(244, 196, 48, 0.08), rgba(96, 165, 250, 0.04)); border: 1px solid var(--border); border-radius: 18px; padding: 36px 28px; text-align: center; }
+  .contact h2 { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+  .contact .sub { color: var(--text-dim); font-size: 14px; margin-bottom: 24px; }
+  .contact-grid { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .contact-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 20px; display: flex; align-items: center; gap: 12px; min-width: 240px; }
+  .contact-item .label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+  .contact-item .value { font-size: 15px; font-weight: 500; font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .copy-btn { background: var(--gold); color: #000; border: none; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 12px; transition: all 0.15s; margin-left: auto; font-family: inherit; }
+  .copy-btn:hover { background: #ffd84d; }
+  .copy-btn.copied { background: var(--green); color: #000; }
+
+  /* Footer */
+  footer { text-align: center; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 13px; }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 600px) {
+    .container { padding: 24px 16px 60px; }
+    .lang-switch { top: 12px; right: 12px; }
+    .stats { gap: 24px; }
+    .stat-num { font-size: 26px; }
+    .contact { padding: 28px 18px; }
+    .contact-item { min-width: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button data-lang="zh" type="button">中文</button>
+    <button data-lang="en" type="button">EN</button>
+  </div>
+
+  <main class="container">
+
+    <section class="hero">
+      <span class="badge" data-i18n="badge"></span>
+      <h1 data-i18n="title"></h1>
+      <p data-i18n="subtitle"></p>
+    </section>
+
+    <div id="currentNotice" class="current-notice" style="display:none;">
+      <span data-i18n="noticePrefix"></span> <strong id="currentDomain"></strong>
+      <span class="hint" data-i18n="noticeHint"></span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num" id="totalCount">20</div><div class="stat-label" data-i18n="statTotal"></div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label" data-i18n="statSeries"></div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label" data-i18n="statLegal"></div></div>
+    </div>
+
+    <section id="domainGroups"></section>
+
+    <section class="contact">
+      <h2 data-i18n="contactTitle"></h2>
+      <p class="sub" data-i18n="contactSub"></p>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div>
+            <div class="label" data-i18n="contactName"></div>
+            <div class="value">亿万斯年 (Time Without End)</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div>
+            <div class="label" data-i18n="contactEmail"></div>
+            <div class="value" id="email">1196755294@qq.com</div>
+          </div>
+          <button class="copy-btn" id="copyBtn" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p data-i18n="footer1"></p>
+      <p data-i18n="footer2"></p>
+    </footer>
+
+  </main>
+
+<script>
+  const groups = [
+    {
+      title_zh: ".games 游戏厂牌域名",
+      title_en: ".games — Studio & Publisher Domains",
+      desc_zh: "适合游戏公司、发行商、独立工作室品牌使用",
+      desc_en: "Built for game studios, publishers and indie brands",
+      domains: ["kingnet.games", "yoozoo.games", "youzu.games", "sjhuatong.games"]
+    },
+    {
+      title_zh: "51tokens 系列",
+      title_en: "51tokens Series",
+      desc_zh: "适合 AI / Token 经济 / 积分类项目",
+      desc_en: "Ideal for AI, token economy & loyalty point projects",
+      domains: ["51tokens.cn", "51tokens.icu", "51tokens.cyou", "51tokens.art"]
+    },
+    {
+      title_zh: "basictoken 系列",
+      title_en: "basictoken Series",
+      desc_zh: "Web3 / 基础币 / Token 项目优选",
+      desc_en: "Premium choice for Web3, base-coin & token projects",
+      domains: ["basictoken.cn", "basictoken.shop", "basictoken.icu", "basictoken.art"]
+    },
+    {
+      title_zh: "91tokens",
+      title_en: "91tokens",
+      desc_zh: "短数字 + 热门后缀，过目难忘",
+      desc_en: "Short numeric prefix with a popular TLD — memorable",
+      domains: ["91tokens.cn"]
+    },
+    {
+      title_zh: "91claws 系列",
+      title_en: "91claws Series",
+      desc_zh: "适合娃娃机 / 抓机 / 潮玩 / 街机品牌",
+      desc_en: "Perfect for claw machines, arcades & trendy toy brands",
+      domains: ["91claws.com", "91claws.shop", "91claws.art", "91claws.icu", "91claws.cn"]
+    },
+    {
+      title_zh: "itoken / itokens 国际域名",
+      title_en: "itoken / itokens — International TLDs",
+      desc_zh: ".world / .ren 国际后缀，全球化项目首选",
+      desc_en: ".world / .ren TLDs — built for globally-facing projects",
+      domains: ["itokens.world", "itoken.ren"]
+    }
+  ];
+
+  const i18n = {
+    zh: {
+      htmlLang: "zh-CN",
+      badge: "Premium Domains · 优质域名",
+      title: "域名出租 / 转让",
+      subtitle: "以下域名均为本人合法持有，欢迎品牌方、项目方、个人开发者洽谈租赁或收购。",
+      noticePrefix: "您正在访问",
+      noticeHint: "该域名为下列出售/出租清单之一。无论您打开哪一个域名，均可看到完整列表。",
+      statTotal: "在售域名总数",
+      statSeries: "品牌系列",
+      statLegal: "合法持有",
+      tagLease: "可出租",
+      tagSale: "可转让",
+      currentLabel: "您正在访问",
+      contactTitle: "联系洽谈",
+      contactSub: "如需租赁或收购，请通过以下方式联系。诚意者优先。",
+      contactName: "联系人",
+      contactEmail: "QQ 邮箱",
+      copy: "复制",
+      copied: "已复制 ✓",
+      copyFail: "请手动复制：",
+      footer1: "© {year} 亿万斯年 · 域名持有方保留所有权利",
+      footer2: "如有意向请通过邮箱联系，谢谢。"
+    },
+    en: {
+      htmlLang: "en",
+      badge: "Premium Domains",
+      title: "Domains for Lease & Sale",
+      subtitle: "All domains below are legally held by me. Brands, projects and individual developers are welcome to inquire about leasing or acquisition.",
+      noticePrefix: "You are visiting",
+      noticeHint: "This domain is part of the catalog below. The same listing is shown on every domain you open.",
+      statTotal: "Domains Available",
+      statSeries: "Brand Series",
+      statLegal: "Legally Held",
+      tagLease: "For Lease",
+      tagSale: "For Sale",
+      currentLabel: "You are here",
+      contactTitle: "Get in Touch",
+      contactSub: "For leasing or acquisition inquiries, please reach out via the channels below. Serious inquiries preferred.",
+      contactName: "Contact",
+      contactEmail: "QQ Email",
+      copy: "Copy",
+      copied: "Copied ✓",
+      copyFail: "Please copy manually: ",
+      footer1: "© {year} Time Without End · All rights reserved by the domain holder",
+      footer2: "Please contact via email for any inquiry. Thank you."
+    }
+  };
+
+  let currentLang = "zh";
+
+  function detectInitialLang() {
+    const saved = localStorage.getItem("preferredLang");
+    if (saved === "zh" || saved === "en") return saved;
+    const nav = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    return nav.startsWith("zh") ? "zh" : "en";
+  }
+
+  function renderGroups() {
+    const container = document.getElementById("domainGroups");
+    const t = i18n[currentLang];
+    const currentHost = (location.hostname || "").replace(/^www\./i, "").toLowerCase();
+    let total = 0;
+
+    container.innerHTML = groups.map(g => {
+      const cards = g.domains.map(d => {
+        const isCurrent = currentHost === d.toLowerCase();
+        const dotIdx = d.indexOf(".");
+        const main = d.slice(0, dotIdx);
+        const tld = d.slice(dotIdx);
+        total++;
+        return `
+          <div class="domain-card ${isCurrent ? "current" : ""}" data-current-label="${t.currentLabel}">
+            <div class="domain-name">${main}<span class="tld">${tld}</span></div>
+            <div class="domain-meta">
+              <span class="tag lease">${t.tagLease}</span>
+              <span class="tag sale">${t.tagSale}</span>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      return `
+        <div class="group">
+          <div class="group-header">
+            <div class="group-title">${currentLang === "zh" ? g.title_zh : g.title_en}</div>
+            <div class="group-desc">${currentLang === "zh" ? g.desc_zh : g.desc_en}</div>
+          </div>
+          <div class="grid">${cards}</div>
+        </div>
+      `;
+    }).join("");
+
+    document.getElementById("totalCount").textContent = total;
+
+    if (currentHost && groups.some(g => g.domains.some(d => d.toLowerCase() === currentHost))) {
+      document.getElementById("currentDomain").textContent = currentHost;
+      document.getElementById("currentNotice").style.display = "block";
+    }
+  }
+
+  function applyLang(lang) {
+    currentLang = lang;
+    localStorage.setItem("preferredLang", lang);
+    const t = i18n[lang];
+    document.documentElement.lang = t.htmlLang;
+    const year = new Date().getFullYear();
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      let val = t[key] || "";
+      val = val.replace("{year}", year);
+      el.textContent = val;
+    });
+
+    document.getElementById("copyBtn").textContent = t.copy;
+
+    document.querySelectorAll(".lang-switch button").forEach(b => {
+      b.classList.toggle("active", b.dataset.lang === lang);
+    });
+
+    renderGroups();
+  }
+
+  function copyEmail() {
+    const t = i18n[currentLang];
+    const email = document.getElementById("email").textContent.trim();
+    const btn = document.getElementById("copyBtn");
+    const done = () => {
+      btn.textContent = t.copied;
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = t.copy; btn.classList.remove("copied"); }, 1800);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+    function fallback() {
+      const ta = document.createElement("textarea");
+      ta.value = email; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch (e) { alert(t.copyFail + email); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  document.querySelectorAll(".lang-switch button").forEach(b => {
+    b.addEventListener("click", () => applyLang(b.dataset.lang));
+  });
+  document.getElementById("copyBtn").addEventListener("click", copyEmail);
+
+  applyLang(detectInitialLang());
+</script>
+</body>
+</html>
